@@ -1,6 +1,4 @@
-# Research
-
-## Hadoop Optimization
+# Hadoop Optimization
 
 1. iShuffle - TPDS 2017
     - Flexible Reduce Dispatching
