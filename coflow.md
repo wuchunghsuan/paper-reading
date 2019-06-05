@@ -29,12 +29,16 @@ e.g., minimizing the completion time of the latest ﬂow or ensuring that flows 
       - use simple integrity check
   - Shuffle Transfers
     - A simple optimality criterion: **fully utilized link**
-      - *an optimal shufﬂe schedule keeps at least one link fully utilized throughout the transfer.*
+      - *an optimal shuffle schedule keeps at least one link fully utilized throughout the transfer.*
     - Analyze the performance of using different connection number of receivers in Section 6.2.
     - Unweighted fair sharing can show poor performance in data skew
     - Weighted Shuffle Scheduling (WSS) Algorithm:
       - allocate rates to each ﬂow using weighted fair sharing
       - Improve shuffle speeds by 29%
+
+## [Hotnets ’12]Coflow: A Networking Abstraction for Cluster Applications
+
+- coflow - a networking abstraction to express the communication requirements of prevalent data parallel programming paradigms.
 
 ## **[SIGCOMM’ 14]** Efficient Coflow Scheduling with Varys
 
@@ -50,12 +54,25 @@ e.g., minimizing the completion time of the latest ﬂow or ensuring that flows 
     3. *Guaranteed completion*
 - Other solutions:
   - Shortest-process-time-first(SPTF):
-- ***Varys*** - provides a simple API that allows data parallel frameworks to express their communication requirements as coﬂows with minimal changes to the framework.
+- ***Varys*** - provides a simple API that allows data parallel frameworks to express their communication requirements as coflows with minimal changes to the framework.
   - *Smallest-Effective-Bottleneck-First (SEBF)* heuristic
-    - greedily schedules a coﬂow based on its bottleneck’s completion time.
+    - greedily schedules a coflow based on its bottleneck’s completion time.
   - *Minimum-Allocation-for-Desired-Duration (MADD)* algorithm
     - allocate rates to its individual flows
 - Evaluation
   - 100-machine EC2 cluster
   - replaying production traces from Facebook
 
+## [SIGCOMM ’15] Efficient coflow scheduling without prior knowledge
+
+- ***Coﬂow-Aware Least-Attained Service (CLAS)*** – to minimize the average CCT without any prior knowledge of coﬂow characteristics
+- Aalo - a system that supports coﬂow dependencies and pipelines, and works well in presence of cluster dynamics like multi-wave scheduling.
+  - requires **no prior knowledge** of coﬂow characteristics, e.g., coﬂow size, number of flows in the coﬂow, or its endpoints.
+  - without any changes to the network or user jobs.
+
+## [SIGCOMM '18] Sincronia: near-optimal network design for coflows
+
+- A practical near-optimal network design for coflows still remains elusive. Two reasons:
+  1. requires knowledge about location of congestion and paths taken by each (co)flow, making it hard to implement in the fabric core and/or changes dynamically.
+  2. Since rates allocated to flows are correlated, reallocation is impractical in datacenters where thousands of coflows may arrive each second.
+- Sincronia -  near-optimal network design for coflows
