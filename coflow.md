@@ -59,6 +59,7 @@ e.g., minimizing the completion time of the latest ﬂow or ensuring that flows 
     - greedily schedules a coflow based on its bottleneck’s completion time.
   - *Minimum-Allocation-for-Desired-Duration (MADD)* algorithm
     - allocate rates to its individual flows
+    - MADD allocates the least amount of bandwidth to complete a coﬂow in minimum possible time.
 - Evaluation
   - 100-machine EC2 cluster
   - replaying production traces from Facebook
